@@ -233,11 +233,13 @@ struct device_config {
  * @param driver_api pointer to structure containing the API functions for
  * the device type. This pointer is filled in by the driver at init time.
  * @param driver_data driver instance data. For driver use only
+ * @param init_good flag set on successful driver init
  */
 struct device {
 	struct device_config *config;
 	const void *driver_api;
 	void *driver_data;
+	bool init_good;
 };
 
 void _sys_device_do_config_level(int level);
